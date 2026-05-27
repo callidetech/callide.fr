@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Callide Technologies — Conseil et pilotage SI, infrastructure, systèmes et réseaux. DSI externalisé en Auvergne-Rhône-Alpes.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Callide Technologies — Conseil SI & DSI externalisé | Auvergne-Rhône-Alpes">
+<meta property="og:description" content="Callide Technologies — Conseil et pilotage SI, infrastructure, systèmes et réseaux. DSI externalisé en Auvergne-Rhône-Alpes.">
+<meta property="og:url" content="https://callide.fr">
+<meta name="twitter:card" content="summary">
+<title>Callide Technologies — Conseil SI & DSI externalisé | Auvergne-Rhône-Alpes</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="canonical" href="https://callide.fr">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0f0f0f;
+  --off:#f7f6f3;
+  --gray:#6b6b6b;
+  --mid:#999;
+  --line:#d5d3cd;
+  --accent:#5F4B8B;
+  --accent-light:#eeebf5;
+  --ocre:#c2794a;
+  --ocre-soft:#e8c9b1;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--black);line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,246,243,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1080px;margin:0 auto;padding:0 5vw;display:flex;justify-content:space-between;align-items:center;height:58px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;letter-spacing:-.01em;color:var(--black);text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:.75rem;font-weight:400;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-contact{font-size:.75rem;letter-spacing:.1em;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px;transition:opacity .2s}
+.nav-contact:hover{opacity:.7}
+
+/* SECTIONS */
+section{padding:0 5vw;position:relative;overflow:hidden}
+.wrap{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:58px;background:var(--off)}
+#hero::before{
+  content:'';position:absolute;top:-5%;left:-15%;width:900px;height:900px;
+  background:radial-gradient(circle at center,rgba(95,75,139,.06) 0%,transparent 70%);
+  pointer-events:none;z-index:0;
+}
+#hero::after{
+  content:'';position:absolute;top:5%;right:-10%;width:850px;height:850px;
+  background:radial-gradient(circle at center,rgba(194,121,74,.08) 0%,transparent 70%);
+  pointer-events:none;z-index:0;
+}
+.hero-inner{padding:8rem 0 7rem;width:100%}
+.hero-kicker{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-bottom:2.5rem;opacity:0;animation:fadeup .6s .1s forwards}
+.hero-headline{font-family:'DM Serif Display',serif;font-size:clamp(3rem,6.5vw,5.5rem);line-height:1.04;letter-spacing:-.03em;color:var(--black);margin:0 0 3rem;font-weight:400}
+.h-static{opacity:0;animation:fadeup .6s .3s forwards;display:inline-block}
+.rotating-wrap{display:inline-block;overflow:hidden;vertical-align:bottom;height:1.38em;opacity:0;animation:fadeup .5s .55s forwards}
+.rotating-inner{display:flex;flex-direction:column;animation:rotate 6s cubic-bezier(.77,0,.18,1) infinite}
+.rotating-inner span{display:block;font-style:italic;color:var(--accent);white-space:nowrap;line-height:1.18;padding:.1em 0}
+.hero-sub{font-size:.7rem;color:var(--mid);margin:1.5rem 0 2rem;opacity:0;animation:fadeup .6s .6s forwards;letter-spacing:.22em;text-transform:uppercase}
+
+/* HERO GRAIN */
+.hero-grain{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.4}
+
+/* ABOUT */
+#about{background:var(--off);padding-top:7rem;padding-bottom:7rem}
+#about::before{
+  content:'';position:absolute;top:10%;right:-10%;width:900px;height:900px;
+  background:radial-gradient(circle at center,rgba(95,75,139,.12) 0%,transparent 60%);
+  pointer-events:none;z-index:0;
+}
+#about::after{
+  content:'';position:absolute;bottom:-20%;left:-10%;width:700px;height:700px;
+  background:radial-gradient(circle at center,rgba(194,121,74,.10) 0%,transparent 60%);
+  pointer-events:none;z-index:0;
+}
+.sec-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);display:flex;align-items:center;gap:.7rem;margin-bottom:1.8rem}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--line)}
+.sec-body{font-size:.97rem;color:var(--gray);line-height:1.85;margin-bottom:1.1rem}
+
+.about-body{max-width:calc(100% * 2.2/3.2);margin-left:auto}
+#about .head-grid{margin-bottom:3rem}
+
+/* SERVICES CARDS */
+.cycle-card{background:#fff;padding:2.8rem 2.2rem;transition:background .25s,box-shadow .25s;position:relative;box-shadow:0 2px 16px rgba(0,0,0,.04)}
+.cycle-card:hover{background:#f8f7fd;box-shadow:0 4px 28px rgba(0,0,0,.07)}
+.cycle-items li::before{content:'—';position:absolute;left:0;color:var(--accent);opacity:.4}
+
+/* STAGGERED REVEAL */
+.cycle.in .cycle-card:nth-child(1){transition-delay:.05s}
+.cycle.in .cycle-card:nth-child(2){transition-delay:.15s}
+.cycle.in .cycle-card:nth-child(3){transition-delay:.25s}
+.cycle-card{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease,background .25s,box-shadow .25s}
+.cycle.in .cycle-card{opacity:1;transform:none}
+#services{background:#fff;padding-top:7rem;padding-bottom:7rem}
+#services::before{
+  content:'';position:absolute;top:20%;left:-15%;width:750px;height:750px;
+  background:radial-gradient(circle at center,rgba(194,121,74,.12) 0%,transparent 60%);
+  pointer-events:none;z-index:0;
+}
+#services::after{
+  content:'';position:absolute;bottom:-15%;right:-10%;width:700px;height:700px;
+  background:radial-gradient(circle at center,rgba(95,75,139,.1) 0%,transparent 60%);
+  pointer-events:none;z-index:0;
+}
+.services-header{margin-bottom:4rem}
+.services-header .sec-label{margin-bottom:1.8rem}
+.head-grid{display:grid;grid-template-columns:1fr 1.8fr;gap:5rem;align-items:start}
+.services-intro{font-size:.97rem;color:var(--gray);line-height:1.85}
+.cycle{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;border:none}
+.cycle-number{position:absolute;top:1.6rem;right:1.8rem;font-size:.68rem;letter-spacing:.14em;color:var(--mid);font-weight:400}
+.cycle-icon{width:40px;height:40px;margin-bottom:1.8rem;color:var(--accent);transition:color .3s,transform .3s}
+.cycle-icon svg{width:100%;height:100%}
+.cycle-card:hover .cycle-icon{color:var(--black);transform:translateY(-2px)}
+.cycle-verb{font-family:'DM Serif Display',serif;font-size:1.8rem;font-style:italic;color:var(--black);letter-spacing:-.02em;margin-bottom:1.4rem;display:block}
+.cycle-subtitle{font-size:.72rem;font-weight:500;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.5rem}
+.cycle-desc{font-size:.83rem;color:var(--gray);line-height:1.7;margin-bottom:1.2rem;font-style:italic}
+.cycle-items{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.cycle-items li{font-size:.82rem;color:var(--gray);padding-left:.9rem;position:relative;line-height:1.55}
+
+/* CONTACT */
+#contact{background:#2a2a2a;padding-top:7rem;padding-bottom:7rem}
+#contact::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 85% 20%,rgba(194,121,74,.09) 0%,transparent 45%);
+  pointer-events:none;z-index:0;
+}
+.contact-waves{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.85;overflow:hidden}
+.contact-waves .wave-left,.contact-waves .wave-right{position:absolute;top:50%;transform:translateY(-50%);height:300px}
+.contact-waves .wave-left{left:0;width:62%}
+.contact-waves .wave-right{right:0;width:62%}
+.contact-waves svg{display:block;width:100%;height:100%;overflow:visible}
+.contact-waves .wave-left svg{
+  mask-image:linear-gradient(to right, transparent 0%, black 15%, black 70%, transparent 100%);
+  -webkit-mask-image:linear-gradient(to right, transparent 0%, black 15%, black 70%, transparent 100%);
+}
+.contact-waves .wave-right svg{
+  mask-image:linear-gradient(to left, transparent 0%, black 15%, black 70%, transparent 100%);
+  -webkit-mask-image:linear-gradient(to left, transparent 0%, black 15%, black 70%, transparent 100%);
+}
+.contact-waves path{fill:none;stroke-width:1.2;stroke-linecap:round}
+.wave-left .p1{stroke:rgba(194,121,74,.60);animation:waveShiftL 7s linear infinite}
+.wave-left .p2{stroke:rgba(232,201,177,.40);stroke-width:.9;animation:waveShiftL 10s linear infinite}
+.wave-left .p3{stroke:rgba(194,121,74,.30);stroke-width:.7;animation:waveShiftL 13s linear infinite}
+.wave-left .p4{stroke:rgba(232,201,177,.20);stroke-width:.6;animation:waveShiftL 9s linear infinite}
+.wave-right .p1{stroke:rgba(201,168,232,.60);animation:waveShiftR 8s linear infinite}
+.wave-right .p2{stroke:rgba(201,168,232,.35);stroke-width:.9;animation:waveShiftR 11s linear infinite}
+.wave-right .p3{stroke:rgba(255,255,255,.15);stroke-width:.7;animation:waveShiftR 14s linear infinite}
+.wave-right .p4{stroke:rgba(201,168,232,.22);stroke-width:.6;animation:waveShiftR 10s linear infinite}
+@keyframes waveShiftL{from{transform:translate(0,-50%)}to{transform:translate(16.667%,-50%)}}
+@keyframes waveShiftR{from{transform:translate(0,-50%)}to{transform:translate(-16.667%,-50%)}}
+#contact .sec-label{color:#888}
+#contact .sec-label::after{background:#444}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;position:relative;z-index:1}
+#contact .sec-title{color:#f0f0f0}
+#contact .sec-title em{color:#c8b8f0}
+.contact-items{display:flex;flex-direction:column}
+.contact-row{border-top:1px solid #3a3a3a;padding:1.3rem 0;display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:center}
+.contact-row:last-child{border-bottom:1px solid #3a3a3a}
+.contact-row>svg{width:18px;height:18px;color:var(--ocre-soft);opacity:.8;flex-shrink:0}
+.c-body{display:flex;flex-direction:column;gap:.2rem}
+.c-label{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:#888}
+.c-val{font-size:.95rem;color:#c0c0c0;text-decoration:none;transition:color .2s}
+.c-val:hover{color:#f0f0f0}
+
+/* MODAL */
+#ml{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;align-items:center;justify-content:center;padding:2rem}
+.ml-inner{background:#fff;max-width:580px;width:100%;padding:3rem;position:relative;max-height:80vh;overflow-y:auto}
+.ml-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;font-size:1.2rem;cursor:pointer;color:#999}
+.ml-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#999;margin-bottom:1.5rem}
+.ml-title{font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:2rem;color:var(--black);font-weight:400}
+.ml-section-title{font-size:.78rem;font-weight:500;color:var(--black);margin-bottom:.3rem}
+.ml-section-body{font-size:.82rem;color:var(--gray);line-height:1.7;margin-bottom:1.5rem}
+.ml-section-body:last-child{margin-bottom:0}
+
+/* FOOTER */
+footer{background:#222;border-top:1px solid #333;padding:1.4rem 5vw;position:relative;overflow:hidden}
+footer::before{
+  content:'';position:absolute;top:50%;left:-25%;transform:translateY(-50%);width:800px;height:800px;
+  background:radial-gradient(circle at center,rgba(95,75,139,.14) 0%,transparent 55%);
+  pointer-events:none;
+}
+
+/* SEC-TITLE — rule ocre */
+.sec-title{font-family:'DM Serif Display',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);line-height:1.18;letter-spacing:-.02em;margin-bottom:1.5rem;color:var(--black)}
+.sec-title em{font-style:italic;color:var(--accent)}
+.foot-inner{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.foot-copy{font-size:.72rem;color:#888}
+.foot-ml{background:none;border:none;font-size:.72rem;color:#888;cursor:pointer;font-family:'DM Sans',sans-serif;padding:0;transition:color .2s}
+.foot-ml:hover{color:#fff}
+.foot-top{font-size:.72rem;color:#888;text-decoration:none;transition:color .2s}
+.foot-top:hover{color:#fff}
+.foot-links{display:flex;gap:2rem;align-items:center}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* KEYFRAMES */
+@keyframes fadeup{to{opacity:1;transform:translateY(0)}}
+@keyframes rotate{
+  0%  {transform:translateY(0)}
+  28% {transform:translateY(0)}
+  33% {transform:translateY(-1.38em)}
+  61% {transform:translateY(-1.38em)}
+  66% {transform:translateY(-2.76em)}
+  94% {transform:translateY(-2.76em)}
+  99% {transform:translateY(-4.14em)}
+  100%{transform:translateY(-4.14em)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  #hero::before,#hero::after,#about::before,#about::after,#services::before,#services::after,
+  .contact-waves path{animation:none !important}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .head-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .about-body{max-width:100%;margin-left:0}
+  .cycle{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hero-inner{padding:5rem 0 4rem}
+  #about,#services,#contact{padding-top:5rem;padding-bottom:5rem}
+}
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <defs>
+    <!-- grain filter — shared -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <!-- compass / Piloter -->
+    <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <polygon points="16,8 14,14 8,16 10,10"/>
+    </symbol>
+    <!-- layers / Implémenter -->
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 12l10 5 10-5"/>
+      <path d="M2 17l10 5 10-5"/>
+      <path d="M2 7l10-5 10 5-10 5-10-5z"/>
+    </symbol>
+    <!-- pulse / Mesurer -->
+    <symbol id="i-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="2,12 6,12 8,5 10,19 13,9 15,14 17,12 22,12"/>
+    </symbol>
+    <!-- mail -->
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="M3 7l9 6 9-6"/>
+    </symbol>
+    <!-- phone -->
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 4h3l2 5-2.5 1.5a11 11 0 006 6L15 14l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/>
+    </symbol>
+    <!-- linkedin -->
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <path d="M8 10v7M8 7.5v.01M12 17v-4a2 2 0 014 0v4M12 10v7"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Callide Technologies</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:hello@callide.fr" class="nav-contact">hello@callide.fr</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grain" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <rect width="100%" height="100%" filter="url(#grain)" opacity="0.18"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <p class="hero-kicker">Conseil & pilotage SI · Auvergne-Rhône-Alpes & au-delà</p>
+      <h1 class="hero-headline">
+        <span class="h-static">Votre SI</span><br>
+        <span class="rotating-wrap"><span class="rotating-inner"><span>piloté.</span><span>implémenté.</span><span>mesuré.</span><span>piloté.</span></span></span>
+      </h1>
+      <p class="hero-sub">Un tiers de confiance pour votre système d'information</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="services-header reveal">
+      <p class="sec-label">Services</p>
+      <div class="head-grid">
+        <h2 class="sec-title">Revenir au début,<br>aller <em>plus loin</em></h2>
+        <p class="services-intro">Trois étapes qui s'enchaînent et s'alimentent, itération après itération.</p>
+      </div>
+    </div>
+    <div class="cycle">
+      <div class="cycle-card">
+        <span class="cycle-number">01 / 03</span>
+        <div class="cycle-icon"><svg><use href="#i-compass"/></svg></div>
+        <span class="cycle-verb">Piloter</span>
+        <p class="cycle-subtitle">Stratégie & Gouvernance</p>
+        <p class="cycle-desc">La vision et les décisions qui structurent les évolutions du SI.</p>
+        <ul class="cycle-items">
+          <li>Cartographie du SI existant</li>
+          <li>Identification des risques et des besoins</li>
+          <li>Schéma directeur et feuilles de route</li>
+          <li>Politique de sécurité (PSSI)</li>
+          <li>Plan de reprise d'activité (PRA)</li>
+          <li>Pilotage des prestataires et des équipes</li>
+        </ul>
+      </div>
+      <div class="cycle-card">
+        <span class="cycle-number">02 / 03</span>
+        <div class="cycle-icon"><svg><use href="#i-layers"/></svg></div>
+        <span class="cycle-verb">Implémenter</span>
+        <p class="cycle-subtitle">Infrastructure & Systèmes</p>
+        <p class="cycle-desc">Des architectures éprouvées, déployées méthodiquement et documentées pour durer.</p>
+        <ul class="cycle-items">
+          <li>Virtualisation, conteneurisation et haute disponibilité</li>
+          <li>Systèmes serveur Windows et Linux</li>
+          <li>Réseaux, switching, VLAN, routage, Wi-Fi</li>
+          <li>Sécurité périmétrique, pare-feux, VPN, accès distants sécurisés</li>
+          <li>Déploiements automatisés</li>
+        </ul>
+      </div>
+      <div class="cycle-card">
+        <span class="cycle-number">03 / 03</span>
+        <div class="cycle-icon"><svg><use href="#i-pulse"/></svg></div>
+        <span class="cycle-verb">Mesurer</span>
+        <p class="cycle-subtitle">Supervision & Continuité</p>
+        <p class="cycle-desc">Les indicateurs qui permettent d'anticiper et d'arbitrer.</p>
+        <ul class="cycle-items">
+          <li>Supervision des infrastructures</li>
+          <li>Surveillance globale et alertes multicanaux</li>
+          <li>Tableaux de bord et indicateurs SI</li>
+          <li>Audit Active Directory, réseau et systèmes</li>
+          <li>Évaluation continue de la posture de sécurité</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="hero-grain" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <rect width="100%" height="100%" filter="url(#grain)" opacity="0.14"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <p class="sec-label reveal">À propos</p>
+    <div class="head-grid reveal">
+      <h2 class="sec-title"><em>Relier</em> la stratégie<br>à l'opérationnel</h2>
+      <p class="services-intro">Derrière Callide Technologies, il y a José Frederico — consultant IT indépendant depuis plus de 25 ans.</p>
+    </div>
+    <div class="about-body reveal">
+      <p class="sec-body">Formateur certifié Microsoft, pilote de déploiements, exploitant d'infrastructure en datacenter : autant d'étapes avant de se consacrer au conseil.</p>
+      <p class="sec-body">Un tiers de confiance, engagé sur la durée — interlocuteur des directions comme des équipes techniques, avec une capacité à proposer, structurer et arbitrer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-waves" aria-hidden="true">
+    <div class="wave-left">
+      <svg viewBox="0 0 2400 400" preserveAspectRatio="xMidYMid meet">
+        <path class="p1" d="M0 210 C 80 140, 160 260, 240 195 S 400 155, 480 200 S 640 270, 720 205 S 880 140, 960 190 S 1120 255, 1200 200 S 1360 145, 1440 195 S 1600 265, 1680 205 S 1840 145, 1920 200 S 2080 260, 2160 205 S 2320 150, 2400 200"/>
+        <path class="p2" d="M0 240 C 90 195, 180 285, 260 235 S 440 175, 520 230 S 680 290, 760 238 S 930 178, 1010 228 S 1170 288, 1250 235 S 1420 172, 1500 225 S 1660 292, 1740 238 S 1910 175, 1990 228 S 2150 285, 2230 235 S 2340 190, 2400 235"/>
+        <path class="p3" d="M0 175 C 70 240, 150 150, 230 185 S 410 240, 490 178 S 650 130, 730 175 S 900 245, 980 182 S 1140 128, 1220 170 S 1390 242, 1470 180 S 1630 130, 1710 172 S 1880 240, 1960 182 S 2120 132, 2200 170 S 2350 238, 2400 178"/>
+        <path class="p4" d="M0 255 C 100 210, 200 295, 300 248 S 480 188, 560 245 S 720 305, 820 250 S 1000 192, 1080 244 S 1240 308, 1340 252 S 1520 190, 1600 246 S 1760 308, 1860 252 S 2040 192, 2120 246 S 2300 305, 2400 255"/>
+      </svg>
+    </div>
+    <div class="wave-right">
+      <svg viewBox="0 0 2400 400" preserveAspectRatio="xMidYMid meet">
+        <path class="p1" d="M0 195 C 85 270, 170 155, 255 205 S 435 265, 515 198 S 675 135, 755 192 S 925 268, 1005 200 S 1165 138, 1245 195 S 1415 265, 1495 200 S 1655 138, 1735 192 S 1905 268, 1985 200 S 2145 140, 2225 195 S 2350 260, 2400 200"/>
+        <path class="p2" d="M0 165 C 75 225, 165 138, 245 172 S 425 232, 505 165 S 665 108, 745 162 S 915 228, 995 165 S 1155 105, 1235 160 S 1405 228, 1485 165 S 1645 108, 1725 160 S 1895 230, 1975 168 S 2135 108, 2215 162 S 2355 228, 2400 168"/>
+        <path class="p3" d="M0 225 C 95 168, 185 278, 275 228 S 455 168, 535 225 S 695 295, 790 232 S 970 168, 1050 225 S 1210 295, 1305 235 S 1485 170, 1565 228 S 1725 295, 1820 235 S 2000 172, 2080 228 S 2240 292, 2400 228"/>
+        <path class="p4" d="M0 248 C 110 195, 205 308, 310 252 S 490 185, 575 248 S 745 318, 845 255 S 1025 188, 1105 250 S 1275 318, 1375 258 S 1555 190, 1635 252 S 1805 318, 1905 258 S 2085 192, 2165 252 S 2320 315, 2400 252"/>
+      </svg>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="sec-label reveal">Contact</p>
+    <div class="contact-grid reveal">
+      <div>
+        <h2 class="sec-title">Parlons de<br>votre <em>projet</em></h2>
+      </div>
+      <div class="contact-items">
+        <div class="contact-row">
+          <svg aria-hidden="true"><use href="#i-mail"/></svg>
+          <div class="c-body">
+            <span class="c-label">Email</span>
+            <a href="mailto:hello@callide.fr" class="c-val">hello@callide.fr</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <svg aria-hidden="true"><use href="#i-phone"/></svg>
+          <div class="c-body">
+            <span class="c-label">Téléphone</span>
+            <a href="tel:+33673525828" class="c-val">+33 6 73 52 58 28</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <svg aria-hidden="true"><use href="#i-linkedin"/></svg>
+          <div class="c-body">
+            <span class="c-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/jose-frederico-56a74a25/" target="_blank" rel="noopener" class="c-val">linkedin.com/in/jose-frederico</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <span class="foot-copy">© 2026 Callide Technologies</span>
+    <div class="foot-links">
+      <button onclick="document.getElementById('ml').style.display='flex'" class="foot-ml">Mentions légales</button>
+      <a href="#" class="foot-top">↑ Haut de page</a>
+    </div>
+  </div>
+</footer>
+
+<div id="ml">
+  <div class="ml-inner">
+    <button onclick="document.getElementById('ml').style.display='none'" class="ml-close">✕</button>
+    <p class="ml-label">Mentions légales</p>
+    <h2 class="ml-title">Informations légales</h2>
+
+    <p class="ml-section-title">Éditeur du site</p>
+    <p class="ml-section-body">Callide Technologies — SARL<br>2 rue Waldeck Rousseau<br>42300 Roanne<br>Email : hello@callide.fr<br>SIRET : 519 015 499 00022<br>Directeur de publication : José Frederico</p>
+
+    <p class="ml-section-title">Hébergeur</p>
+    <p class="ml-section-body">GitHub, Inc.<br>88 Colin P Kelly Jr St<br>San Francisco, CA 94107, USA<br>github.com</p>
+
+    <p class="ml-section-title">Propriété intellectuelle</p>
+    <p class="ml-section-body">L'ensemble du contenu de ce site (textes, visuels, structure) est la propriété exclusive de Callide Technologies. Toute reproduction, même partielle, est interdite sans autorisation préalable.</p>
+
+    <p class="ml-section-title">Données personnelles</p>
+    <p class="ml-section-body">Ce site ne collecte aucune donnée personnelle. Aucun cookie de traçage n'est utilisé.</p>
+  </div>
+</div>
+
+<script>
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})
+},{threshold:0.12});
+document.querySelectorAll('.reveal:not(#about .reveal)').forEach(el=>obs.observe(el));
+
+const obsAbout=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})
+},{threshold:0.3});
+document.querySelectorAll('#about .reveal').forEach(el=>obsAbout.observe(el));
+
+const obsCycle=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})
+},{threshold:0.35});
+document.querySelectorAll('.cycle').forEach(el=>obsCycle.observe(el));
+</script>
+</body>
+</html>
